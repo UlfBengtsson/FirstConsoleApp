@@ -3,7 +3,7 @@
 namespace FirstConsoleApp
 {
     /*
-    multi line comment
+        multi line comment
     */
     class Program
     {
@@ -47,8 +47,6 @@ namespace FirstConsoleApp
                 }
 
             } while (userSelection != 9);
-
-
         }//end of Main
 
         static void Bartender()
@@ -69,10 +67,16 @@ namespace FirstConsoleApp
 
         static int GetNumberFromUser()
         {
-            string userInput = Console.ReadLine();
 
             int number = 0;
-            int.TryParse(userInput, out number);
+            bool is_A_Number = false;
+
+            do
+            {
+                string userInput = Console.ReadLine();
+                is_A_Number = int.TryParse(userInput, out number);
+
+            } while ( ! is_A_Number);
 
             return number;
         }
